@@ -65,7 +65,7 @@ describe('Countly youTube Test', () => {
         
     });
 
-    it.only('TC10 Verify the selected random video name', () => {
+    it('TC10 Verify the selected random video name', () => {
         cy.wait(3000)
         cy.randomVideoSelect()
         cy.wait(3000)
