@@ -45,9 +45,10 @@ describe('Countly youTube Test', () => {
 
     });
 
-    it('TC07 Verify  advertisement content countdown', () => {
+    it.only('TC07 Verify  advertisement content countdown', () => {
         cy.wait(3000)
         cy.adsCountAssert()
+        cy.wait(15000)
         cy.visibleByText('Atla')
         cy.clickByText('Atla')
 
@@ -72,4 +73,6 @@ describe('Countly youTube Test', () => {
         cy.randomVideoAssert()
 
     });
+
+    
 });
