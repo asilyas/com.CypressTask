@@ -1,3 +1,4 @@
+///<reference types="Cypress" />
 
 const countly = require("../fixtures/countly.json")
 import { youtubePage } from "../support/youTubeSelector";
@@ -45,7 +46,7 @@ describe('Countly youTube Test', () => {
 
     });
 
-    it.only('TC07 Verify  advertisement content countdown', () => {
+    it('TC07 Verify  advertisement content countdown', () => {
         cy.wait(3000)
         cy.adsCountAssert()
         cy.wait(15000)
