@@ -33,3 +33,5 @@ if(!app.document.head.querySelector('[data-hide-command-log-request]')){
 require('cypress-iframe');
 
 require('cypress-xpath');
+
+import 'cypress-file-upload';
