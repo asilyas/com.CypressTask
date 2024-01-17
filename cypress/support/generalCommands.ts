@@ -15,6 +15,8 @@ declare global {
             randomVideoSelect():Chainable<void>
             randomVideoAssert():Chainable<void>
             visible(selector:string): Chainable<void>
+            amazonsearch(productName:string):Chainable<void>
+           
         }
     }
 }
@@ -91,4 +93,13 @@ Cypress.Commands.add('randomVideoAssert',()=>{
 })
 Cypress.Commands.add('visible',(selector)=>{
     cy.get(selector).should('be.visible')
+})
+
+
+Cypress.Commands.add('amazonsearch',(productName)=>{
+    cy.visit('https://www.amazon.com')
+    cy.get('#twotabsearchtextbox').type(productName)
+    cy.get('#nav-search-submit-button').click()
+    cy.get('#twotabsearchtextbox').should('have.value',productName)
+
 })
